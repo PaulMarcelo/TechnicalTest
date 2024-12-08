@@ -3,6 +3,7 @@ package ec.paul.yaguachi.bankaccount.customerperson.controller;
 import ec.paul.yaguachi.bankaccount.customerperson.exception.AppException;
 import ec.paul.yaguachi.bankaccount.customerperson.service.ICustomberService;
 import ec.paul.yaguachi.bankaccount.customerperson.vo.CustomerVo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,7 @@ import java.util.Optional;
 @Lazy
 @RestController
 @RequestMapping("/api/customer")
+@Slf4j
 public class CustomerController {
 
     @Lazy
@@ -83,6 +85,9 @@ public class CustomerController {
             }
         } catch (AppException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (Exception ex) {
+            log.error("Error al eliminar el cliente: {}", ex.getMessage());
+            return new ResponseEntity<>("Inconveniente al procesar el Cliente, por favor comuniquese con el administrador \"", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

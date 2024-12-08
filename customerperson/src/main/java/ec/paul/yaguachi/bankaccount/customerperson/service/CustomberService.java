@@ -7,7 +7,6 @@ import ec.paul.yaguachi.bankaccount.customerperson.model.Customer;
 import ec.paul.yaguachi.bankaccount.customerperson.repository.ICustomberRepository;
 import ec.paul.yaguachi.bankaccount.customerperson.vo.CustomerVo;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
