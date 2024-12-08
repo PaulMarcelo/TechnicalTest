@@ -1,5 +1,5 @@
 # TechnicalTest
 Prueba tecnica Paul Yaguachi
 
-Base de datos: Posgrest
+Base de datos: Postgresql
 
